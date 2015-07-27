@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Who Is My Rep?</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">Who Is My Rep?</string>
+    <string name="title_activity_search_zip">Search By Zip</string>
+    <string name="title_activity_search_rep_name">Search By Rep Name</string>
+    <string name="title_activity_search_rep_state">Search By Rep State</string>
+    <string name="title_activity_search_sen_name">Search By Sen Name</string>
+    <string name="title_activity_search_sen_state">Search By Sen State</string>
+    <string-array name="my_spinner">
+        <item>Search by Zip Code</item>
+        <item>Search Representative by Last Name</item>
+        <item>Search Representative by State</item>
+        <item>Search Senator by Last Name</item>
+        <item>Search Senator by State</item>
+    </string-array>
+    <string name="title_activity_list">List</string>
+</resources>

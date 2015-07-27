@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.charlesburks.whoismyrep" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Splash"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_splash" >
+        </activity>
+        <activity
+            android:name=".SearchZip"
+            android:label="@string/title_activity_search_zip" >
+        </activity>
+        <activity
+            android:name=".SearchRepName"
+            android:label="@string/title_activity_search_rep_name" >
+        </activity>
+        <activity
+            android:name=".SearchRepState"
+            android:label="@string/title_activity_search_rep_state" >
+        </activity>
+        <activity
+            android:name=".SearchSenName"
+            android:label="@string/title_activity_search_sen_name" >
+        </activity>
+        <activity
+            android:name=".SearchSenState"
+            android:label="@string/title_activity_search_sen_state" >
+        </activity>
+    </application>
+
+</manifest>
