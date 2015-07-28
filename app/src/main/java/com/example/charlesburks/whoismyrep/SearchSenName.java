@@ -33,20 +33,19 @@ public class SearchSenName extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_sen_name);
-        Button zipButton = (Button) findViewById(R.id.button);
+        Button zipButton = (Button) findViewById(R.id.button2);
         zipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText zipEdit = (EditText) findViewById(R.id.editText);
-                String zipEnter = (zipEdit.getText().toString());
-                //XMLParser xml = new XMLParser();
+                EditText zipEdit = (EditText) findViewById(R.id.nameEdit);
+                String nameEnter = (zipEdit.getText().toString());
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Loading...", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 50);
                 toast.show();
-                Zip = "http://whoismyrepresentative.com/getall_mems.php?zip=" + zipEnter + "&output=json";
+                Zip = "http://whoismyrepresentative.com/getall_sens_byname.php?name=" + nameEnter + "&output=json";
                 switch (v.getId()) {
-                    case R.id.button:
+                    case R.id.button2:
                         new XMLParser().execute(Zip);
                         break;
                 }
@@ -89,12 +88,12 @@ public class SearchSenName extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            TextView zipText = (TextView) findViewById(R.id.textView);
+            TextView zipText = (TextView) findViewById(R.id.senName);
             try {
                 JSONObject jObject = new JSONObject(result);
                 // Pulling items from the array
                 JSONArray jArray = jObject.getJSONArray("results");
-                JSONObject oneObject = jArray.getJSONObject(1);
+                JSONObject oneObject = jArray.getJSONObject(0);
                 // Pulling items from the array
                 String oneObjectsItem = oneObject.getString("name");
                 //String oneObjectsItem2 = oneObject.getString("anotherSTRINGNAMEINtheARRAY");

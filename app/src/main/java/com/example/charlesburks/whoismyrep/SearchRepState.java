@@ -33,20 +33,20 @@ public class SearchRepState extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_rep_state);
-        Button zipButton = (Button) findViewById(R.id.button);
+        Button zipButton = (Button) findViewById(R.id.button3);
         zipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText zipEdit = (EditText) findViewById(R.id.editText);
+                EditText zipEdit = (EditText) findViewById(R.id.editState);
                 String zipEnter = (zipEdit.getText().toString());
                 //XMLParser xml = new XMLParser();
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Loading...", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 50);
                 toast.show();
-                Zip = "http://whoismyrepresentative.com/getall_mems.php?zip=" + zipEnter + "&output=json";
+                Zip = "http://whoismyrepresentative.com/getall_reps_bystate.php?state=" + zipEnter + "&output=json";
                 switch (v.getId()) {
-                    case R.id.button:
+                    case R.id.button3:
                         new XMLParser().execute(Zip);
                         break;
                 }
@@ -89,7 +89,7 @@ public class SearchRepState extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            TextView zipText = (TextView) findViewById(R.id.textView);
+            TextView zipText = (TextView) findViewById(R.id.answerView);
             try {
                 JSONObject jObject = new JSONObject(result);
                 // Pulling items from the array

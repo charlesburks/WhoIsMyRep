@@ -39,14 +39,14 @@ public class SearchRepName extends ActionBarActivity {
             public void onClick(View v) {
                 EditText nameEdit = (EditText) findViewById(R.id.nameEdit);
                 String nameEnter = (nameEdit.getText().toString());
-                String nameEnter1 = nameEnter.substring(0,1).toUpperCase() + nameEnter.substring(1).toLowerCase();
+                //String nameEnter1 = nameEnter.substring(0,1).toUpperCase() + nameEnter.substring(1).toLowerCase();
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Loading...", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 50);
                 toast.show();
-                name = "http://whoismyrepresentative.com/getall_reps_byname.php?name=" + nameEnter1 + "&output=json";
+                name = "http://whoismyrepresentative.com/getall_reps_byname.php?name=" + nameEnter + "&output=json";
                 switch (v.getId()) {
-                    case R.id.button:
+                    case R.id.button2:
                         new XMLParser().execute(name);
                         break;
                 }
